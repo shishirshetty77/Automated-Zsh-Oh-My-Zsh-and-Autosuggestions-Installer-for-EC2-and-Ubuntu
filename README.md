@@ -104,9 +104,3 @@ upt
 → should display `uptime` in **gray** (press → to accept).
 
 ---
-
-## ✨ Author
-**Shishir Shetty**  
-_Automation Engineer & Cloud Enthusiast_  
-
-💬 “Hello from Shishir — your terminal is now smarter 😎”
