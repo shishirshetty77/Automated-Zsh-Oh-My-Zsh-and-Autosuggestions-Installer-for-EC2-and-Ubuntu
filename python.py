@@ -69,7 +69,6 @@ def main():
     print("----------------------------------------------------")
     print("✅ Setup complete!")
     print("💡 Log out and SSH back in — you’ll start in Zsh.")
-    print("Hello from Shishir — your terminal is now smarter 😎")
     print("----------------------------------------------------")
 
 if __name__ == "__main__":
