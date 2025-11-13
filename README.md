@@ -139,8 +139,8 @@ source ~/.zshrc
 
 
 ### ** Install Kind, helm and Kubectl**
-'''bash
-
+```bash
+# KIND
 [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-amd64
 [ $(uname -m) = aarch64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-arm64
 chmod +x ./kind
@@ -161,4 +161,4 @@ echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 sudo apt install -y vim
-'''
+```
