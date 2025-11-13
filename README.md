@@ -104,3 +104,35 @@ upt
 → should display `uptime` in **gray** (press → to accept).
 
 ---
+### ** Terminal Remap in One Block Of Code**
+```bash
+# Update system
+sudo apt update && sudo apt install -y git wget curl fonts-powerline
+
+# Install Oh My Zsh (if already installed, this will just refresh it)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install Powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Enable Powerlevel10k in .zshrc
+sed -i 's|ZSH_THEME=".*"|ZSH_THEME="powerlevel10k/powerlevel10k"|' ~/.zshrc
+
+# Install zsh-autosuggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Install zsh-syntax-highlighting plugin
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Enable plugins in .zshrc
+sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+
+# Install Nerd Fonts (for icons & beautiful prompt)
+sudo apt install -y fonts-firacode
+
+# Reload config
+source ~/.zshrc
+```
